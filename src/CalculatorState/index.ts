@@ -3,7 +3,6 @@ class CalculatorState {
 
   public firstNumber?: string | number;
   public operation?: string | number;
-
   public startNewNumber = true;
 
   get screen() {
