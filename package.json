@@ -1,7 +1,6 @@
 {
   "name": "kpi",
   "version": "1.0.0",
-  "description": "",
   "main": "index.ts",
   "scripts": {
     "test": "jest --coverage",
@@ -37,5 +36,14 @@
     "@types/jest": "^27.0.3",
     "jest": "^27.4.5",
     "ts-jest": "^27.1.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drewmeltpool/calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/drewmeltpool/calculator/issues"
+  },
+  "homepage": "https://github.com/drewmeltpool/calculator#readme",
+  "description": ""
 }
