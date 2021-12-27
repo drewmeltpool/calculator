@@ -9,7 +9,7 @@ const handleKeyPress = (instance: CalculatorState, key: string) => {
     }
     instance.startNewNumber = false;
   } else if (key === '/' || key === '+' || key === '-' || key === '*') {
-    if (instance.screen) {
+    if (instance.firstNumber) {
       instance.operation = key;
       instance.startNewNumber = true;
       instance.firstNumber = instance.screen;
