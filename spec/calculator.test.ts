@@ -1,23 +1,39 @@
 import Calculator from '../src/Calculator';
 
 describe('Calculator', () => {
-  it('calc default usage', () => {
+  it('Calc default usage', () => {
+    const expected = 3;
+
     const calculator = new Calculator();
-    expect(calculator.calc('1 + 2 =')).toBe(3);
+    const actual = calculator.calc('1 + 2 =');
+
+    expect(actual).toBe(expected);
   });
 
-  it('calc without =', () => {
+  it('Calc without =', () => {
+    const expected = 2;
+
     const calculator = new Calculator();
-    expect(calculator.calc('1 + 2')).toBe(2);
+    const actual = calculator.calc('1 + 2');
+
+    expect(actual).toBe(expected);
   });
 
-  it('calc without second number', () => {
+  it('Calc without second number', () => {
+    const expected = 1;
+
     const calculator = new Calculator();
-    expect(calculator.calc('1 + ')).toBe(1);
+    const actual = calculator.calc('1 + ');
+
+    expect(actual).toBe(expected);
   });
 
-  it('calc without operation', () => {
+  it('Calc without operation', () => {
+    const expected = 1;
+
     const calculator = new Calculator();
-    expect(calculator.calc('1')).toBe(1);
+    const actual = calculator.calc('1');
+
+    expect(actual).toBe(expected);
   });
 });

@@ -1,11 +1,19 @@
 import { spaceParse } from '../src/utils';
 
 describe('Space parser', () => {
-  it('default usage', () => {
-    expect(spaceParse('1 + 2')).toEqual(['1', '+', '2']);
+  it('Default usage', () => {
+    const expected = ['1', '+', '2'];
+
+    const actual = spaceParse('1 + 2');
+
+    expect(actual).toEqual(expected);
   });
 
-  it('empty string', () => {
-    expect(spaceParse('')).toEqual(['']);
+  it('Empty string', () => {
+    const expected = [''];
+
+    const actual = spaceParse('');
+
+    expect(actual).toEqual(expected);
   });
 });

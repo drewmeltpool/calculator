@@ -2,51 +2,69 @@ import CalculatorState from '../src/CalculatorState';
 import handleKeyPress from '../src/handleKeyPress';
 
 describe('Handle press key', () => {
-  it('default usage +', () => {
-    const state = new CalculatorState();
-    handleKeyPress(state, '1');
-    handleKeyPress(state, '+');
-    handleKeyPress(state, '1');
-    handleKeyPress(state, '1');
-    handleKeyPress(state, '=');
+  describe('Default usage', () => {
+    it('Usage with operation "+"', () => {
+      const expected = 12;
+      const state = new CalculatorState();
 
-    expect(state.screen).toBe(12);
-  });
+      handleKeyPress(state, '1');
+      handleKeyPress(state, '+');
+      handleKeyPress(state, '1');
+      handleKeyPress(state, '1');
+      handleKeyPress(state, '=');
 
-  it('default usage /', () => {
-    const state = new CalculatorState();
-    handleKeyPress(state, '2');
-    handleKeyPress(state, '4');
-    handleKeyPress(state, '/');
-    handleKeyPress(state, '1');
-    handleKeyPress(state, '2');
-    handleKeyPress(state, '=');
+      const { screen: actual } = state;
 
-    expect(state.screen).toBe(2);
-  });
+      expect(actual).toBe(expected);
+    });
 
-  it('default usage -', () => {
-    const state = new CalculatorState();
-    handleKeyPress(state, '2');
-    handleKeyPress(state, '4');
-    handleKeyPress(state, '-');
-    handleKeyPress(state, '1');
-    handleKeyPress(state, '2');
-    handleKeyPress(state, '=');
+    it('Usage with operation "/"', () => {
+      const expected = 2;
+      const state = new CalculatorState();
 
-    expect(state.screen).toBe(12);
-  });
+      handleKeyPress(state, '2');
+      handleKeyPress(state, '4');
+      handleKeyPress(state, '/');
+      handleKeyPress(state, '1');
+      handleKeyPress(state, '2');
+      handleKeyPress(state, '=');
 
-  it('default usage *', () => {
-    const state = new CalculatorState();
-    handleKeyPress(state, '1');
-    handleKeyPress(state, '2');
-    handleKeyPress(state, '*');
-    handleKeyPress(state, '1');
-    handleKeyPress(state, '2');
-    handleKeyPress(state, '=');
+      const { screen: actual } = state;
 
-    expect(state.screen).toBe(144);
+      expect(actual).toBe(expected);
+    });
+
+    it('Usage with operation "-"', () => {
+      const expected = 12;
+      const state = new CalculatorState();
+
+      handleKeyPress(state, '2');
+      handleKeyPress(state, '4');
+      handleKeyPress(state, '-');
+      handleKeyPress(state, '1');
+      handleKeyPress(state, '2');
+      handleKeyPress(state, '=');
+
+      const { screen: actual } = state;
+
+      expect(actual).toBe(expected);
+    });
+
+    it('Usage with operation "*"', () => {
+      const expected = 144;
+      const state = new CalculatorState();
+
+      handleKeyPress(state, '1');
+      handleKeyPress(state, '2');
+      handleKeyPress(state, '*');
+      handleKeyPress(state, '1');
+      handleKeyPress(state, '2');
+      handleKeyPress(state, '=');
+
+      const { screen: actual } = state;
+
+      expect(actual).toBe(expected);
+    });
   });
 
   it('press number', () => {
